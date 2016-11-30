@@ -19,5 +19,5 @@ $ curl localhost:1337/snapshot > dump.heapsnapshot
 A CPU profile
 
 ```bash
-$ curl localhost:1337/profile > profile.json
+$ curl localhost:1337/profile > profile.cpuprofile
 ```
