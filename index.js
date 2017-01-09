@@ -8,6 +8,8 @@ function DebugServer () {
   if (!new.target) return new DebugServer()
 
   let server = this.server = restify.createServer()
+  server.use(restify.queryParser())
+
   server.get('/snapshot', function (req, res, next) {
     console.log('Take snapshot')
     let snapshot = profiler.takeSnapshot()
@@ -18,6 +20,8 @@ function DebugServer () {
   })
 
   server.get('/profile', function (req, res, next) {
+    let duration = req.query.duration || 1000
+
     console.log('Start profiling')
     profiler.startProfiling('')
     setTimeout(() => {
@@ -27,7 +31,7 @@ function DebugServer () {
         profile.delete()
         next()
       })
-    }, 1000)
+    }, duration)
   })
 }
 
