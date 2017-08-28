@@ -7,8 +7,8 @@ module.exports = DebugServer
 function DebugServer () {
   if (!new.target) return new DebugServer()
 
-  let server = this.server = restify.createServer()
-  server.use(restify.queryParser())
+  let server = (this.server = restify.createServer())
+  server.use(restify.plugins.queryParser())
 
   server.get('/snapshot', function (req, res, next) {
     console.log('Take snapshot')

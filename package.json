@@ -9,7 +9,7 @@
   "author": "Mathias Lundell",
   "license": "ISC",
   "dependencies": {
-    "restify": "^4.3.0",
-    "v8-profiler": "^5.6.5"
+    "restify": "^5.2.0",
+    "v8-profiler": "^5.7.0"
   }
 }
