@@ -1,6 +1,6 @@
 'use strict'
 let restify = require('restify')
-let profiler = require('v8-profiler')
+let profiler = require('v8-profiler-node8')
 
 module.exports = DebugServer
 
